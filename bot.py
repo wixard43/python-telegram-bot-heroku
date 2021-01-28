@@ -13,7 +13,7 @@ allow = False
 print ('Trying to connect telegram')
 with TelegramClient ("untao", api_id, api_hash) as client:
     print ("Connected to telegram")
-    @client.on (events.NewMessage (chats = 1295349523) )
+    @client.on (events.NewMessage (chats = -408117409) )
     async def withdHandler (event):
         global allow
         if '/g_withdraw' in event.raw_text:
@@ -23,8 +23,8 @@ with TelegramClient ("untao", api_id, api_hash) as client:
     @client.on (events.NewMessage (chats = "@chtwrsbot") )
     async def recHandler (event):
         global allow
-        if 'Recipient shall send to' in event.raw_text and allow:
-            await event.forward_to (1295349523)
+        if 'Collector of Dragonscale' in event.raw_text and allow:
+            await event.forward_to (-408117409)
             allow = False
 
     client.run_until_disconnected ()
